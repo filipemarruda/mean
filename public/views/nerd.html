@@ -1,31 +1,62 @@
-<div class="jumbotron text-center">
-	<h1>Nerds and Proud</h1>
 
-	<p>{{ tagline }}</p>
 
-	<!-- LOOP OVER THE TODOS IN $scope.todos -->
-	<div class="checkbox" ng-repeat="nerd in nerds">
-		<label>
-			{{ nerd.name }} - {{ nerd.language }}
-			<!-- deleteTodo(nerd._id) -->
-		</label>
-		<button class="btn btn-danger" ng-click="deleteNerd(nerd._id)" aria-label="Remove">X</button>
-	</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-3 col-md-1">
+			<ul class="nav nav-sidebar">
+				<li><a href="/nerds">Nerds</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-9 col-md-10 main">
+			<div>
+				<h1 class="sub-header">Nerds</h1>
+				<span class="text-muted">{{ nerds.length }} cadastrados</span>
+				
 
-	<!-- FORM TO CREATE NERDS -->
-	<div id="nerd-form" class="row">
-		<div class="col-sm-8 col-sm-offset-2 text-center">
-			<form>
-				<div class="form-group">
+				<!-- LOOP OVER THE TODOS IN $scope.todos -->
 
-					<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-					<input type="text" class="form-control input-lg text-center" placeholder="nerd" ng-model="formData.name">
-					<input type="text" class="form-control input-lg text-center" placeholder="linguagens" ng-model="formData.language">
+				<div class="table-responsive">
+			  	<table class="table table-striped">
+			      <thead>
+			        <tr>
+			          <th>Nerd</th>
+			          <th>Linguagens</th>
+			          <th>Remover</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <tr ng-repeat="nerd in nerds">
+			          <td>{{ nerd.name }}</td>
+			          <td>{{ nerd.language }}</td>
+			          <td><button class="btn btn-xs btn-danger" ng-click="deleteNerd(nerd._id)" aria-label="Remove">X</button></td>
+			        </tr>
+			      </tbody>
+			    </table>
+			  </div>
+
+				<!-- FORM TO CREATE NERDS -->
+				<div id="nerd-form" class="row">
+					<form>
+						<div class="col-md-3">
+							<div class="form-group">
+								<input type="text" class="form-control input-lg" placeholder="nerd" ng-model="formData.name">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<input type="text" class="form-control input-lg" placeholder="linguagens" ng-model="formData.language">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<!-- createToDo() WILL CREATE NEW TODOS -->
+							<button type="submit" class="btn btn-primary btn-lg" ng-click="createNerd()">Adicionar</button>
+						
+						</div>
+					</form>
 				</div>
-
-				<!-- createToDo() WILL CREATE NEW TODOS -->
-				<button type="submit" class="btn btn-primary btn-lg" ng-click="createNerd()">Adicionar</button>
-			</form>
+			</div>
+			<p>{{ tagline }}</p>
 		</div>
 	</div>
 </div>
+

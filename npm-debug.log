@@ -4,19 +4,23 @@
 1 verbose cli   'start' ]
 2 info using npm@1.4.23
 3 info using node@v0.10.31
-4 error Failed to parse json
-4 error Unexpected token }
-5 error File: c:\NodeJS\mean\package.json
-6 error Failed to parse package.json data.
-6 error package.json must be actual JSON, not just JavaScript.
-6 error
-6 error This is not a bug in npm.
-6 error Tell the package author to fix their package.json file. JSON.parse
-7 error System Windows_NT 6.1.7601
-8 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
-9 error cwd c:\NodeJS\mean
-10 error node -v v0.10.31
-11 error npm -v 1.4.23
-12 error file c:\NodeJS\mean\package.json
-13 error code EJSONPARSE
-14 verbose exit [ 1, true ]
+4 error Error: Invalid name: "Projeto inicial"
+4 error     at ensureValidName (c:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\node_modules\normalize-package-data\lib\fixer.js:315:15)
+4 error     at Object.module.exports.fixNameField (c:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\node_modules\normalize-package-data\lib\fixer.js:204:5)
+4 error     at c:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\node_modules\normalize-package-data\lib\normalize.js:30:38
+4 error     at Array.forEach (native)
+4 error     at normalize (c:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\node_modules\normalize-package-data\lib\normalize.js:29:15)
+4 error     at final (c:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:342:33)
+4 error     at then (c:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:126:33)
+4 error     at c:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:331:40
+4 error     at evalmachine.<anonymous>:271:14
+4 error     at c:\Program Files\nodejs\node_modules\npm\node_modules\graceful-fs\graceful-fs.js:102:5
+5 error If you need help, you may report this *entire* log,
+5 error including the npm and node versions, at:
+5 error     <http://github.com/npm/npm/issues>
+6 error System Windows_NT 6.1.7601
+7 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+8 error cwd c:\NodeJS\mean
+9 error node -v v0.10.31
+10 error npm -v 1.4.23
+11 verbose exit [ 1, true ]
